@@ -1,0 +1,10 @@
+---
+
+nslcd:
+  packages: nss-pam-ldapd
+  service_name: nslcd
+  config:
+    uid: nslcd
+    gid: nslcd
+    uri: ldap://127.0.0.1/
+    base: dc=example,dc=com

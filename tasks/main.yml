@@ -1,0 +1,28 @@
+---
+
+- include: map.yml
+
+- name: install
+  package:
+    name: "{{ nslcd.packages }}"
+    state: present
+
+- name: enable and start
+  service:
+    name: "{{ nslcd.service_name }}"
+    state: started
+    enabled: yes
+
+- name: configure
+  template:
+    src: nslcd.conf.j2
+    dest: /etc/nslcd.conf
+    owner: root
+    group: root
+    mode: 0600
+    # seuser: system_u
+    # serole: object_r
+    # setype: etc_t
+    # selevel: s0
+  notify:
+    - restart nslcd

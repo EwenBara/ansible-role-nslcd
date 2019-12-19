@@ -1,0 +1,10 @@
+---
+
+Debian:
+  nslcd:
+    packages: nslcd
+
+RedHat:
+  nslcd:
+    config:
+      gid: ldap
