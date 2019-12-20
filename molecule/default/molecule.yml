@@ -15,17 +15,18 @@ platforms:
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: yes
-    pre_build_image: yes
   - name: CentOS7
     image: centos:7
     command: /sbin/init
-    tmpfs:
-      - /run
-      - /tmp
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: yes
-    pre_build_image: yes
+  # - name: Debian9
+  #   image: debian:stretch
+  #   command: /sbin/init
+  #   volumes:
+  #     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+  #   privileged: yes
 provisioner:
   name: ansible
   lint:
