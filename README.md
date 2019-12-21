@@ -1,7 +1,7 @@
-Role Name
-=========
+ansible-role-nslcd [![Build Status](https://travis-ci.com/EwenBara/ansible-role-nslcd.svg?branch=master)](https://travis-ci.com/EwenBara/ansible-role-nslcd)
+============================================================================================================================================================
 
-A brief description of the role goes here.
+Role to install and manage nslcd software
 
 Requirements
 ------------
@@ -34,12 +34,12 @@ passed in as parameters) is always nice for users too:
 
     - hosts: servers
       roles:
-         - { role: pacman, x: 42 }
+         - { role: nslcd }
 
 License
 -------
 
-BSD
+GPLv3
 
 Author Information
 ------------------
