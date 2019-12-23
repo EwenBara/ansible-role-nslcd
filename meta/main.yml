@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: nslcd
   author: Ewen BARA
   description: Role to install and manage nslcd
   # company: your company (optional)
