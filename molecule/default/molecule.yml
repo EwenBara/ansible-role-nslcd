@@ -3,8 +3,6 @@ dependency:
   name: galaxy
 driver:
   name: docker
-lint:
-  name: yamllint
 platforms:
   - name: Archlinux
     image: archlinux:latest
@@ -21,6 +19,7 @@ platforms:
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: yes
+    pre_build_image: yes
   # - name: Debian9
   #   image: debian:stretch
   #   command: /sbin/init
@@ -29,9 +28,5 @@ platforms:
   #   privileged: yes
 provisioner:
   name: ansible
-  lint:
-    name: ansible-lint
 verifier:
-  name: testinfra
-  lint:
-    name: flake8
+  name: ansible
