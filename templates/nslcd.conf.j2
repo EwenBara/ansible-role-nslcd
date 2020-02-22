@@ -34,11 +34,13 @@ base {{ nslcd.config.base }}
 # The distinguished name to bind to the server with.
 # Optional: default is to bind anonymously.
 #binddn cn=proxyuser,dc=example,dc=com
+{% if nslcd.config.binddn %}binddn {{ nslcd.config.binddn }}{% endif %}
 
 # The credentials to bind with.
 # Optional: default is no credentials.
 # Note that if you set a bindpw you should check the permissions of this file.
 #bindpw secret
+{% if nslcd.config.bindpw %}bindpw {{ nslcd.config.bindpw }}{% endif %}
 
 # The distinguished name to perform password modifications by root by.
 #rootpwmoddn cn=admin,dc=example,dc=com
