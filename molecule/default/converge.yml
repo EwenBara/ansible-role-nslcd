@@ -4,4 +4,4 @@
   tasks:
     - name: "Include ansible-role-nslcd"
       include_role:
-        name: "ansible-role-nslcd"
+        name: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
