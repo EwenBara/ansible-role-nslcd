@@ -45,6 +45,8 @@ base {{ nslcd.config.base }}
 # The distinguished name to perform password modifications by root by.
 #rootpwmoddn cn=admin,dc=example,dc=com
 
+{% if nslcd.config.sasl_mech is defined %}sasl_mech {{ nslcd.config.sasl_mech }}{% endif %}
+
 # The default search scope.
 #scope sub
 #scope one
